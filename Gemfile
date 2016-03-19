@@ -19,6 +19,9 @@ gem 'devise'
 gem 'high_voltage'
 gem 'sendgrid'
 gem 'simple_form'
+
+gem 'sqlite3'
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
@@ -29,10 +32,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 group :production do
-  gem ‘sqlite3’
   gem 'rails_12factor'
 end
 group :test do
