@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 
+// All the added stuff
+
 //= require classie
 //= require creative
 //= require wow.min
