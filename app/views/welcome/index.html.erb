@@ -1,2 +1,7 @@
 <h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+<% if user_signed_in? %>
+    Hello <%= current_user.email %>
+<% else %>
+  Sign Up: <%= link_to "Here", new_user_registration_path %>
+<% end %>
