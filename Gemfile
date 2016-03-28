@@ -27,7 +27,7 @@
 
  gem 'bootstrap-sass', '~> 3.2.0'
  gem 'autoprefixer-rails'
- gem 'font-awesome-sass'
+ gem 'font-awesome-sass', '~> 4.5.0'
  gem 'jquery-ui-rails'
 
  gem 'google-webfonts', '~> 0.2.0'

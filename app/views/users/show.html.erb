@@ -1,2 +1,62 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6"><h2>Your Profile</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+      <table class="table table-responsive">
+        <tbody>
+        <tr>
+          <td>
+            <label class="control-label">First Name</label>
+          </td>
+          <td>
+            <%= current_user.first_name %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="control-label">Last Name</label>
+          </td>
+          <td>
+            <%= current_user.last_name %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="control-label">Email</label>
+          </td>
+          <td>
+            <%= current_user.email %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="control-label">Sign Up Date</label>
+          </td>
+          <td>
+            <%= current_user.created_at %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="control-label">Your IP</label>
+          </td>
+          <td>
+            <%= current_user.last_sign_in_ip %>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-offset-3 col-sm-3">
+      <%= link_to 'Task Manager', '#', class: 'btn btn-success', role: 'button' %>
+      <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, class: 'btn btn-info', role: 'button' %>
+    </div>
+    <div class="col-xs-6 col-sm-3">
+
+    </div>
+  </div>
+</div>
