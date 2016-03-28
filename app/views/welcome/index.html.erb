@@ -1,9 +1,6 @@
-<h1>Welcome#index</h1>
-
-<% if user_signed_in? %>
-    Hello <%= current_user.email %><br />
-    Sign Out: <%= link_to "Here", destroy_user_session_path, :method => :delete %>
-<% else %>
-    Not signed in.<br />
-  Sign Up: <%= link_to "Here", new_user_registration_path %>
-<% end %>
+<%= render partial: 'navbar' %>
+<%= render partial: 'splash_page' %>
+<%= render partial: 'about' %>
+<%= render partial: 'features' %>
+<%= render partial: 'signup' %>
+<%= render partial: 'contact' %>
