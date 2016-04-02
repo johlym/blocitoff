@@ -1,0 +1,44 @@
+<h1>Tasks</h1>
+
+<table class="table table-striped table-responsive">
+  <thead>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Category
+    </th>
+    <th>
+      Date Archived
+    </th>
+    <th>
+      Complete?
+    </th>
+    <th>
+      Actions
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+
+<% @tasks.each do |task|
+  time_until = task.duedate_datestamp.to_i - Time.now.to_i
+%>
+    <%= render partial: 'archive_task', locals: { name: task.name,
+                                          completion: task.completion,
+                                          id: task.id,
+                                          time_until: time_until } %>
+
+      </tbody>
+
+      </table>
+<% end %>
+
+
+
+
+
+
+<br />
+<%= render partial: 'footer_links', locals: { archive: true } %>

@@ -1,0 +1,6 @@
+<%= link_to 'New Task', new_task_path %> |
+<% if archive %>
+    <%= link_to 'View Task List', tasks_path %>
+<% else %>
+    <%= link_to 'View Archived', view_archived_tasks_path %>
+<% end %>

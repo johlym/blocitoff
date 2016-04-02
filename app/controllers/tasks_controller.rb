@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where archived: false
 
   end
 
@@ -17,6 +17,7 @@ class TasksController < ApplicationController
     @task.completion = false
     @task.creation_datestamp = Time.now.getutc
     @task.duedate_datestamp = @task.creation_datestamp + 7.days
+    @task.archived = false
 
     if @task.save
       flash[:notice] = 'Task was saved.'
@@ -51,6 +52,8 @@ class TasksController < ApplicationController
   def update_status
     @task = Task.find(params[:id])
     @task.completion = params[:status]
+    @task.archived = true
+
     if @task.save
       flash[:notice] = 'Task was updated.'
       redirect_to tasks_path
@@ -58,6 +61,10 @@ class TasksController < ApplicationController
       flash.now[:alert] = 'There was an error updating the task. Please try again.'
       redirect_to tasks_path
     end
+  end
+
+  def view_archive
+    @tasks = Task.where archived: true
   end
 
 end

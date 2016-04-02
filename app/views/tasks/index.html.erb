@@ -20,6 +20,7 @@
   </tr>
   </thead>
   <tbody>
+
   <% @tasks.each do |task|
   time_until = task.duedate_datestamp.to_i - Time.now.to_i
   %>
@@ -28,8 +29,11 @@
                                         id: task.id,
                                         time_until: time_until } %>
   <% end %>
-  </tbody>
+
+
+</tbody>
+
 </table>
 
 <br />
-<%= link_to 'New Task', new_task_path %>
+<%= render partial: 'footer_links', locals: { archive: false } %>
