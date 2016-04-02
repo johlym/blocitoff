@@ -1,8 +1,8 @@
-<h1>Create A Task</h1>
+<h1>Edit Task</h1>
 <%= form_for @task do |f| %>
     <p>
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: 'New task name' %>
     </p>
 
     <p>

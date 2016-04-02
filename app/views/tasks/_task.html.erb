@@ -1,6 +1,9 @@
+<%
+# NAME # CATEGORY # DUE # COMPLETE?
+%>
 <tr>
   <td>
-    <%= name %>
+    <%= link_to "#{name}", task_path(id) %>
   </td>
   <td>
     TBD
@@ -9,6 +12,22 @@
     TBD
   </td>
   <td>
-    TBD
+    <% if completion %>
+    Yes
+    <% else %>
+    No
+    <% end %>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_task_path(id) %> |
+
+    <% if completion %>
+        <%= link_to 'Mark Uncomplete', update_status_path(id: id, status: false), method: :put %>
+    <% else %>
+        <%= link_to 'Mark Complete', update_status_path(id: id, status: true), method: :put %>
+    <% end %>
+
+
+
   </td>
 </tr>

@@ -14,11 +14,14 @@
     <th>
       Complete?
     </th>
+    <th>
+      Actions
+    </th>
   </tr>
   </thead>
   <tbody>
   <% @tasks.each do |task| %>
-  <%= render partial: 'task', locals: { name: task.name } %>
+  <%= render partial: 'task', locals: { name: task.name, completion: task.completion, id: task.id } %>
   <% end %>
   </tbody>
 </table>
