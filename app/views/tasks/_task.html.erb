@@ -9,7 +9,11 @@
     TBD
   </td>
   <td>
-    TBD
+    <% if time_until <= 0 %>
+      PAST DUE
+    <% else %>
+      <%= distance_of_time_in_words(time_until) %>
+    <% end %>
   </td>
   <td>
     <% if completion %>

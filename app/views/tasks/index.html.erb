@@ -9,7 +9,7 @@
       Category
     </th>
     <th>
-      Due
+      Due In
     </th>
     <th>
       Complete?
@@ -20,8 +20,13 @@
   </tr>
   </thead>
   <tbody>
-  <% @tasks.each do |task| %>
-  <%= render partial: 'task', locals: { name: task.name, completion: task.completion, id: task.id } %>
+  <% @tasks.each do |task|
+  time_until = task.duedate_datestamp.to_i - Time.now.to_i
+  %>
+  <%= render partial: 'task', locals: { name: task.name,
+                                        completion: task.completion,
+                                        id: task.id,
+                                        time_until: time_until } %>
   <% end %>
   </tbody>
 </table>

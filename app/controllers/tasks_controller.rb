@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+
   end
 
   def new
@@ -13,7 +14,9 @@ class TasksController < ApplicationController
     @task = Task.new
     @task.name = params[:task][:name]
     @task.user_id = current_user.id
-    @task.completion = true
+    @task.completion = false
+    @task.creation_datestamp = Time.now.getutc
+    @task.duedate_datestamp = @task.creation_datestamp + 7.days
 
     if @task.save
       flash[:notice] = 'Task was saved.'
