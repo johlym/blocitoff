@@ -1,5 +1,5 @@
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server 'appsrv01.johnathanlyman.com', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:johlym/blocitoff'
 set :application,     'blocitoff'
