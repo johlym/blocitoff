@@ -5,7 +5,7 @@ gem 'rails', '4.2.6'
 
 # #1
 group :production do
-gem 'rails_12factor'
+    gem 'rails_12factor'
 end
 
 # #2
@@ -43,3 +43,8 @@ gem 'google-webfonts', '~> 0.2.0'
 gem 'devise'
 
 gem 'puma'
+
+gem 'sqlite3'
+
+gem 'execjs'
+gem 'therubyracer'
