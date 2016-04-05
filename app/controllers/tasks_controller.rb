@@ -63,7 +63,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def view_archive
+  def archive
     @tasks = Task.where archived: true
   end
 
