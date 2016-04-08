@@ -52,7 +52,7 @@ Rails.application.configure do
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups.
-  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.logger = RemoteSyslogLogger.new('logs3.papertrailapp.com', 43111)
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store

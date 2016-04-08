@@ -49,3 +49,5 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'dotenv-rails'
+
+gem 'remote_syslog_logger'
